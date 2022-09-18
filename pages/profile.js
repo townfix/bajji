@@ -4,9 +4,9 @@ import { supabase } from '../lib/initSupabase'
 
 export default function Profile({ user }) {
   return (
-    <div style={{ maxWidth: '420px', margin: '96px auto' }}>
+    <div style={{ maxWidth: '800px', margin: '96px auto' }}>
       <Card>
-        <Space direction="vertical" size={6}>
+        <Space direction="vertical" size={12}>
           <Typography.Text>You're signed in</Typography.Text>
           <Typography.Text strong>Email: {user.email}</Typography.Text>
           <Typography.Text type="success">
