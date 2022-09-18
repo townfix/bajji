@@ -46,21 +46,21 @@ const Index = () => {
       return (
         <Space direction="vertical" size={8}>
           <div>
-            <img
+            {/* <img
               src="https://app.supabase.io/img/supabase-dark.svg"
               width="96"
-            />
+            /> */}
             <Typography.Title level={3}>
               Welcome!
             </Typography.Title>
           </div>
-          <Auth
+          {/* <Auth
             supabaseClient={supabase}
             providers={['google', 'github']}
             view={authView}
             socialLayout="horizontal"
             socialButtonSize="xlarge"
-          />
+          /> */}
         </Space>
       )
 
