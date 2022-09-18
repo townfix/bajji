@@ -54,13 +54,13 @@ const Index = () => {
               Welcome!
             </Typography.Title>
           </div>
-          {/* <Auth
+          <Auth
             supabaseClient={supabase}
             providers={['google', 'github']}
             view={authView}
             socialLayout="horizontal"
             socialButtonSize="xlarge"
-          /> */}
+          />
         </Space>
       )
 

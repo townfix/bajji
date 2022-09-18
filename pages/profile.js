@@ -17,11 +17,11 @@ export default function Profile({ user }) {
             <pre>{JSON.stringify(user, null, 2)}</pre>
           </Typography.Text>
 
-          <Typography.Text>
+          {/* <Typography.Text>
             <Link href="/">
               <a>Static example with useSWR</a>
             </Link>
-          </Typography.Text>
+          </Typography.Text> */}
         </Space>
       </Card>
     </div>
