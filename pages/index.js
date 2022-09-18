@@ -51,7 +51,7 @@ const Index = () => {
               width="96"
             />
             <Typography.Title level={3}>
-              Welcome to Supabase Auth
+              Welcome!
             </Typography.Title>
           </div>
           <Auth
@@ -65,7 +65,7 @@ const Index = () => {
       )
 
     return (
-      <Space direction="vertical" size={6}>
+      <Space direction="vertical" size={1}>
         {authView === 'update_password' && (
           <Auth.UpdatePassword supabaseClient={supabase} />
         )}
@@ -84,7 +84,7 @@ const Index = () => {
             {error && (
               <Typography.Text danger>Failed to fetch user!</Typography.Text>
             )}
-            {data && !error ? (
+            {/* {data && !error ? (
               <>
                 <Typography.Text type="success">
                   User data retrieved server-side (in API route):
@@ -96,13 +96,13 @@ const Index = () => {
               </>
             ) : (
               <div>Loading...</div>
-            )}
+            )} */}
 
-            <Typography.Text>
+            {/* <Typography.Text>
               <Link href="/profile">
                 <a>SSR example with getServerSideProps</a>
               </Link>
-            </Typography.Text>
+            </Typography.Text> */}
           </>
         )}
       </Space>
