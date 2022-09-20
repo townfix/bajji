@@ -1,12 +1,13 @@
-import Link from 'next/link'
-import { Card, Typography, Space } from '@supabase/ui'
-import { supabase } from '../lib/initSupabase'
+// import Link from "next/link";
+import { Card, Typography, Space } from "@supabase/ui";
+import { supabase } from "../lib/initSupabase";
+//
 
 export default function Profile({ user }) {
   return (
-    <div style={{ maxWidth: '800px', margin: '96px auto' }}>
+    <div style={{ maxWidth: "800px", margin: "96px auto" }}>
       <Card>
-        <Space direction="vertical" size={12}>
+        <Space direction="vertical" size={6}>
           <Typography.Text>You're signed in</Typography.Text>
           <Typography.Text strong>Email: {user.email}</Typography.Text>
           <Typography.Text type="success">
@@ -25,17 +26,17 @@ export default function Profile({ user }) {
         </Space>
       </Card>
     </div>
-  )
+  );
 }
 
 export async function getServerSideProps({ req }) {
-  const { user } = await supabase.auth.api.getUserByCookie(req)
+  const { user } = await supabase.auth.api.getUserByCookie(req);
 
   if (!user) {
     // If no user, redirect to index.
-    return { props: {}, redirect: { destination: '/', permanent: false } }
+    return { props: {}, redirect: { destination: "/", permanent: false } };
   }
 
   // If there is a user, return it.
-  return { props: { user } }
+  return { props: { user } };
 }

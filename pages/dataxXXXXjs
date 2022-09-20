@@ -1,0 +1,77 @@
+import { supabase } from "../lib/initSupabase";
+// import { useEffect, useState } from "react";
+import { Auth, Card } from "@supabase/ui";
+
+// export default function dataz() {
+//   return <div>About us</div>;
+// }
+
+export default function datax({ tablex }) {
+  // const { user, session } = Auth.useUser();
+  // console.log({ tX });
+  return (
+    <div style={{ maxWidth: "420px", margin: "96px auto" }}>
+      <Card>
+        {tablex.map((tZ) => (
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <p key={user.email}>{tZ.name}</p>
+                </td>
+                <td>
+                  <p key={user.email}>{tZ.email}</p>
+                </td>
+                <td>
+                  <p key={user.email}>{tZ.phone}</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        ))}
+      </Card>
+    </div>
+  );
+}
+
+// export function greet(name) {
+//   return `Hello, ${name}`;
+// }
+
+// export const getStaticProps = async () => {
+
+//   const { data: tablex } = await supabase
+//   .from("tablex")
+//   .select("name, email, phone");
+// if (tablex) {
+//   return {
+//     props: {
+//       tablex
+//     }
+//   };
+// }
+
+// };
+
+export async function getServerSideProps({ req }) {
+  const { user } = await supabase.auth.api.getUserByCookie(req);
+
+  if (!user) {
+    // If no user, redirect to index.
+    return { props: {}, redirect: { destination: "/", permanent: false } };
+  }
+
+  // If there is a user, return it.
+  return { props: { user } };
+
+  const { data: tablex } = await supabase
+    .from("tablex")
+    .select("name, email, phone");
+  if (tablex) {
+    return {
+      props: {
+        tablex
+      }
+    };
+  }
+}

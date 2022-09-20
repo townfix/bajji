@@ -1,4 +1,10 @@
 body {
   background: #3d3d3d;
   font-family: Helvetica, Arial, Sans-Serif;
+  zoom: 150%;
+}
+
+html {
+  font-family: Helvetica, Arial, Sans-Serif;
+  transform: scale(1.25) !important;
 }
